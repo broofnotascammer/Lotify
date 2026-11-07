@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package lotify.protocol;
+
+enum PlaybackState {
+  PLAYBACK_STOPPED = 0;
+  PLAYBACK_PLAYING = 1;
+  PLAYBACK_PAUSED = 2;
+}
+
+message MediaSessionUpdate {
+  string track_title = 1;
+  repeated string artists = 2;
+  string album_title = 3;
+  uint64 duration_ms = 4;
+  uint64 position_ms = 5;
+  PlaybackState playback_state = 6;
+  string art_url = 7;
+}
+
+message MediaControlCommand {
+  enum CommandType {
+    CMD_PLAY = 0;
+    CMD_PAUSE = 1;
+    CMD_PLAY_PAUSE = 2;
+    CMD_NEXT = 3;
+    CMD_PREVIOUS = 4;
+    CMD_SEEK = 5;
+    CMD_SET_VOLUME = 6;
+  }
+  CommandType command = 1;
+  int64 param = 2;
+}

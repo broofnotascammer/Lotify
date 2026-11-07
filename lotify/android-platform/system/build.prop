@@ -1,0 +1,42 @@
+# Lotify System Properties (AOSP Android 14 - android-14.0.0_r50)
+ro.build.version.release=14
+ro.build.version.sdk=34
+ro.build.version.preview_sdk=0
+ro.build.version.codename=REL
+ro.build.version.all_codenames=REL
+ro.build.type=userdebug
+ro.build.user=lotify
+ro.build.host=archlinux-x86_64
+ro.build.tags=release-keys
+ro.build.id=UP1A.231005.007
+ro.build.display.id=UP1A.231005.007.lotify.0.3.0
+
+# Device & Architecture Metadata (Ivy Bridge / x86-64 Target)
+ro.product.model=Lotify Compatibility Device
+ro.product.brand=Lotify
+ro.product.name=aosp_x86_64_lotify
+ro.product.device=generic_x86_64
+ro.product.board=lotify_x86_64
+ro.product.manufacturer=Lotify Project
+ro.product.cpu.abi=x86_64
+ro.product.cpu.abilist=x86_64
+ro.product.cpu.abilist64=x86_64
+ro.product.cpu.abilist32=
+
+# ART Runtime Configuration
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=768m
+dalvik.vm.heapstartsize=64m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+dalvik.vm.execution-mode=int:jit
+dalvik.vm.dex2oat-filter=speed-profile
+dalvik.vm.isa.x86_64.features=default
+
+# Headless & Desktop Integration Flags
+ro.kernel.qemu=0
+ro.lotify.version=0.3.0
+ro.lotify.aosp_revision=android-14.0.0_r50
+ro.lotify.audio.backend=pipewire
+ro.lotify.graphics.driver=crocus

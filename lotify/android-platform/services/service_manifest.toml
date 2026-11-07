@@ -1,0 +1,58 @@
+# Lotify Android Framework System Service Manifest
+# Defines services registered into ServiceManager (Handle 0)
+
+[[service]]
+name = "package"
+interface_descriptor = "android.content.pm.IPackageManager"
+is_critical = true
+status = "registered"
+description = "Package metadata, component discovery, and permission inspection"
+
+[[service]]
+name = "activity"
+interface_descriptor = "android.app.IActivityManager"
+is_critical = true
+status = "registered"
+description = "Application lifecycle, task stacks, and process management"
+
+[[service]]
+name = "power"
+interface_descriptor = "android.os.IPowerManager"
+is_critical = true
+status = "registered"
+description = "Wake lock coordination mapped to Linux systemd inhibitor locks"
+
+[[service]]
+name = "display"
+interface_descriptor = "android.hardware.display.IDisplayManager"
+is_critical = true
+status = "registered"
+description = "Logical display metrics (1440x900 default, 220 dpi) and orientation"
+
+[[service]]
+name = "audio"
+interface_descriptor = "android.media.IAudioService"
+is_critical = true
+status = "registered"
+description = "Audio focus negotiation and AudioTrack stream routing to PipeWire"
+
+[[service]]
+name = "connectivity"
+interface_descriptor = "android.net.IConnectivityManager"
+is_critical = true
+status = "registered"
+description = "Network state reporting via Linux AF_NETLINK socket inspection"
+
+[[service]]
+name = "media_session"
+interface_descriptor = "android.media.session.ISessionManager"
+is_critical = false
+status = "registered"
+description = "MediaSession controller bridged to D-Bus MPRIS v2"
+
+[[service]]
+name = "notification"
+interface_descriptor = "android.app.INotificationManager"
+is_critical = false
+status = "registered"
+description = "Desktop notification dispatch mapped to org.freedesktop.Notifications"

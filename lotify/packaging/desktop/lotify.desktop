@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Lotify
+GenericName=Spotify Android Compatibility Runtime
+Comment=Execute Android Spotify natively on Linux via specialized AOSP compatibility runtime
+Exec=lotify-gtk
+Icon=lotify
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Player;
+StartupNotify=true
+StartupWMClass=lotify-gtk
+Keywords=Spotify;Android;Compatibility;Music;Audio;

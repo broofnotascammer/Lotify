@@ -1,0 +1,17 @@
+[Unit]
+Description=Lotify Runtime Supervisor Daemon
+Documentation=https://github.com/lotify/lotify
+After=pipewire.service dbus.socket
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/lotifyd
+Restart=on-failure
+RestartSec=3s
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%t/lotify %h/.local/share/lotify
+
+[Install]
+WantedBy=default.target

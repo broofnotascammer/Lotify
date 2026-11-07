@@ -1,0 +1,15 @@
+[package]
+name = "lotify-protocol"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+lotify-errors = { path = "../lotify-errors" }
+bytes.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+prost.workspace = true
+serde.workspace = true
+tracing.workspace = true

@@ -1,0 +1,20 @@
+[package]
+name = "lotify-gtk"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+lotify-core = { path = "../../crates/lotify-core" }
+lotify-protocol = { path = "../../crates/lotify-protocol" }
+lotify-config = { path = "../../crates/lotify-config" }
+lotify-apk = { path = "../../crates/lotify-apk" }
+lotify-errors = { path = "../../crates/lotify-errors" }
+lotify-logging = { path = "../../crates/lotify-logging" }
+
+gtk4.workspace = true
+libadwaita.workspace = true
+glib.workspace = true
+tokio.workspace = true
+tracing.workspace = true

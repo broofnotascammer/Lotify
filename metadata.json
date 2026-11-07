@@ -1,0 +1,6 @@
+{
+  "name": "Lotify — Android Spotify Compatibility Platform",
+  "description": "Specialised x86-64 Linux compatibility runtime and GTK 4 desktop launcher for running the official Android Spotify application on Linux.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

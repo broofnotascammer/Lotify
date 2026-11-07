@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Lotify Platform Permission Mapping
+  Configures basic Android permissions mapped to host Linux user/group boundaries
+-->
+<permissions>
+    <!-- Network Access -->
+    <permission name="android.permission.INTERNET">
+        <group gid="inet" />
+    </permission>
+    <permission name="android.permission.ACCESS_NETWORK_STATE" />
+    <permission name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Audio & Media Controls -->
+    <permission name="android.permission.MODIFY_AUDIO_SETTINGS">
+        <group gid="audio" />
+    </permission>
+    <permission name="android.permission.RECORD_AUDIO">
+        <group gid="audio" />
+    </permission>
+    <permission name="android.permission.FOREGROUND_SERVICE" />
+    <permission name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <permission name="android.permission.WAKE_LOCK" />
+
+    <!-- Notifications & Bluetooth -->
+    <permission name="android.permission.POST_NOTIFICATIONS" />
+    <permission name="android.permission.BLUETOOTH" />
+    <permission name="android.permission.BLUETOOTH_CONNECT" />
+
+    <!-- GID Mappings to Linux Host -->
+    <group gid="inet" />
+    <group gid="audio" />
+</permissions>

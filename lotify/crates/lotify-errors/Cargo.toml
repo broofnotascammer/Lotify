@@ -1,0 +1,10 @@
+[package]
+name = "lotify-errors"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+nix.workspace = true

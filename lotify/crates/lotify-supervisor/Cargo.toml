@@ -1,0 +1,25 @@
+[package]
+name = "lotify-supervisor"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "lotifyd"
+path = "src/main.rs"
+
+[dependencies]
+lotify-core = { path = "../lotify-core" }
+lotify-protocol = { path = "../lotify-protocol" }
+lotify-config = { path = "../lotify-config" }
+lotify-errors = { path = "../lotify-errors" }
+lotify-logging = { path = "../lotify-logging" }
+lotify-android-runtime = { path = "../lotify-android-runtime" }
+lotify-android-bootstrap = { path = "../lotify-android-bootstrap" }
+tokio.workspace = true
+tokio-stream.workspace = true
+bytes.workspace = true
+nix.workspace = true
+tracing.workspace = true
+serde.workspace = true

@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package lotify.protocol;
+
+enum DaemonState {
+  STATE_UNSPECIFIED = 0;
+  STATE_STOPPED = 1;
+  STATE_STARTING = 2;
+  STATE_READY = 3;
+  STATE_LAUNCHING = 4;
+  STATE_RUNNING = 5;
+  STATE_STOPPING = 6;
+  STATE_FAILED = 7;
+}
+
+message HandshakeRequest {
+  uint32 protocol_version = 1;
+  string client_name = 2; // e.g. "lotify-gtk"
+  uint32 client_pid = 3;
+}
+
+message HandshakeResponse {
+  uint32 protocol_version = 1;
+  string daemon_version = 2;
+  uint32 daemon_pid = 3;
+  DaemonState current_state = 4;
+}
+
+message GetStateRequest {}
+
+message GetStateResponse {
+  DaemonState state = 1;
+  uint64 uptime_seconds = 2;
+  uint32 active_app_pid = 3;
+  string active_package = 4;
+  string last_error = 5;
+}
+
+message StartRuntimeRequest {
+  string profile_override = 1;
+  bool enable_debug_logs = 2;
+}
+
+message StartRuntimeResponse {
+  bool success = 1;
+  string error_message = 2;
+}
+
+message StopRuntimeRequest {
+  bool force = 1;
+}
+
+message StopRuntimeResponse {
+  bool success = 1;
+}
+
+message HeartbeatPing {
+  uint64 timestamp_ms = 1;
+}
+
+message HeartbeatPong {
+  uint64 timestamp_ms = 1;
+  DaemonState state = 2;
+}

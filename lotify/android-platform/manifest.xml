@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Lotify AOSP Pinned Source Manifest
+  Revision: android-14.0.0_r50 (Android 14 QPR3 - Upside Down Cake)
+  Architecture: x86-64 (target_arch=x86_64)
+  Scope: Standalone ART Runtime, Bionic Libc, Dynamic Linker, Minimal Framework
+-->
+<manifest>
+  <remote name="aosp"
+          fetch="https://android.googlesource.com/"
+          review="https://android-review.googlesource.com/" />
+
+  <default revision="refs/tags/android-14.0.0_r50"
+           remote="aosp"
+           sync-j="4" />
+
+  <!-- Core Runtime & Compiler -->
+  <project path="art" name="platform/art" groups="pdk" />
+  <project path="bionic" name="platform/bionic" groups="pdk" />
+  <project path="libcore" name="platform/libcore" groups="pdk" />
+  <project path="libnativehelper" name="platform/libnativehelper" groups="pdk" />
+
+  <!-- System Core, Linker & Binder -->
+  <project path="system/core" name="platform/system/core" groups="pdk" />
+  <project path="system/logging" name="platform/system/logging" groups="pdk" />
+  <project path="system/tools/aidl" name="platform/system/tools/aidl" groups="pdk" />
+
+  <!-- Minimal Framework Services for Headless Execution -->
+  <project path="frameworks/base" name="platform/frameworks/base" groups="pdk" />
+  <project path="frameworks/native" name="platform/frameworks/native" groups="pdk" />
+  <project path="frameworks/libs/modules-utils" name="platform/frameworks/libs/modules-utils" groups="pdk" />
+
+  <!-- Build Tools (Soong / Blueprint) -->
+  <project path="build/soong" name="platform/build/soong" groups="pdk,soong">
+    <linkfile src="root.bp" dest="Android.bp" />
+  </project>
+  <project path="build/make" name="platform/build" groups="pdk">
+    <linkfile src="core/root.mk" dest="Makefile" />
+  </project>
+</manifest>

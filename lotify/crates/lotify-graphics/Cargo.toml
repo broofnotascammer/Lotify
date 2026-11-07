@@ -1,0 +1,11 @@
+[package]
+name = "lotify-graphics"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+lotify-errors = { path = "../lotify-errors" }
+tracing.workspace = true
+serde.workspace = true

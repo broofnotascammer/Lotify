@@ -1,0 +1,10 @@
+[package]
+name = "apk-inspect"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+lotify-apk = { path = "../../crates/lotify-apk" }
+lotify-errors = { path = "../../crates/lotify-errors" }

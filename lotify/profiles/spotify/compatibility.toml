@@ -1,0 +1,51 @@
+# Lotify Compatibility Matrix: Android Subsystems for Spotify
+# Documents verified support, API levels, and subsystem status
+
+[[subsystem]]
+name = "Android Runtime (ART) & DEX Execution"
+api_level = "24-34"
+status = "supported"
+dependencies = ["libart.so", "libart-compiler.so", "bionic-linker"]
+limitations = "x86-64 native instruction set only; no ARM binary translation in v0.1"
+
+[[subsystem]]
+name = "Bionic Libc & Dynamic Linker"
+api_level = "24-34"
+status = "supported"
+dependencies = ["libc.so", "libdl.so", "libm.so"]
+limitations = "Custom isolated loader namespaces mapping to host glibc symbols safely"
+
+[[subsystem]]
+name = "Binder IPC"
+api_level = "34"
+status = "supported"
+dependencies = ["/dev/binder or /dev/binderfs", "libbinder.so"]
+limitations = "Requires Linux kernel CONFIG_ANDROID_BINDER_IPC or binderfs"
+
+[[subsystem]]
+name = "AudioTrack Bridge (PipeWire)"
+api_level = "24-34"
+status = "supported"
+dependencies = ["libpipewire-0.3", "libaudioclient.so"]
+limitations = "16-bit PCM and float PCM at 44.1kHz / 48kHz supported"
+
+[[subsystem]]
+name = "MediaSession & MPRIS v2"
+api_level = "24-34"
+status = "supported"
+dependencies = ["D-Bus session bus", "zbus"]
+limitations = "Play/pause, next/prev, metadata and seek events exposed"
+
+[[subsystem]]
+name = "EGL / GLES 3.0"
+api_level = "24-34"
+status = "supported"
+dependencies = ["Mesa DRI", "libEGL.so", "libGLESv2.so"]
+limitations = "Tested on Intel HD 4000 (Ivy Bridge) and NVIDIA PRIME"
+
+[[subsystem]]
+name = "Google Play Services Shim"
+api_level = "N/A"
+status = "stub"
+dependencies = ["lotify-android-api::gms"]
+limitations = "Basic Cast and Auth token stub for Spotify accounts; Widevine L3 handled via unencrypted/standard streams"

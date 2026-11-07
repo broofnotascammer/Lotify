@@ -1,0 +1,16 @@
+[package]
+name = "lotify-android-runtime"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+lotify-core = { path = "../lotify-core" }
+lotify-errors = { path = "../lotify-errors" }
+lotify-protocol = { path = "../lotify-protocol" }
+lotify-android-bootstrap = { path = "../lotify-android-bootstrap" }
+tokio.workspace = true
+nix.workspace = true
+tracing.workspace = true
+serde.workspace = true

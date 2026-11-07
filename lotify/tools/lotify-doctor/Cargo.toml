@@ -1,0 +1,12 @@
+[package]
+name = "lotify-doctor"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+lotify-core = { path = "../../crates/lotify-core" }
+lotify-errors = { path = "../../crates/lotify-errors" }
+nix.workspace = true
+tracing.workspace = true

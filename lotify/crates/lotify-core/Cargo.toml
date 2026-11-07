@@ -1,0 +1,12 @@
+[package]
+name = "lotify-core"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+lotify-errors = { path = "../lotify-errors" }
+serde.workspace = true
+tracing.workspace = true
+tokio.workspace = true

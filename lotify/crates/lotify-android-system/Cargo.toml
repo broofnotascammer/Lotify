@@ -1,0 +1,15 @@
+[package]
+name = "lotify-android-system"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+lotify-core = { path = "../lotify-core" }
+lotify-errors = { path = "../lotify-errors" }
+lotify-binder = { path = "../lotify-binder" }
+serde.workspace = true
+tracing.workspace = true
+tokio.workspace = true
+thiserror.workspace = true

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package lotify.protocol;
+
+message DiagnosticsRequest {
+  bool run_gpu_probe = 1;
+  bool run_audio_probe = 2;
+}
+
+message CheckResult {
+  string check_id = 1;
+  string title = 2;
+  bool passed = 3;
+  string detail = 4;
+  string remediation = 5;
+}
+
+message DiagnosticsResponse {
+  bool all_passed = 1;
+  repeated CheckResult checks = 2;
+  string kernel_version = 3;
+  string mesa_version = 4;
+  string pipewire_version = 5;
+}

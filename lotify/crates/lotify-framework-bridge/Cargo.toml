@@ -1,0 +1,16 @@
+[package]
+name = "lotify-framework-bridge"
+version = "0.1.0"
+edition = "2021"
+authors = ["Lotify Systems Team"]
+description = "Bridges AOSP system service calls to native Linux host subsystems (PipeWire, X11/Wayland, NetworkManager)"
+
+[dependencies]
+lotify-core = { path = "../lotify-core" }
+lotify-errors = { path = "../lotify-errors" }
+lotify-logging = { path = "../lotify-logging" }
+lotify-audio = { path = "../lotify-audio" }
+lotify-graphics = { path = "../lotify-graphics" }
+lotify-android-system = { path = "../lotify-android-system" }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"

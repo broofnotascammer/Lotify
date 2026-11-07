@@ -1,0 +1,41 @@
+# Lotify Application Profile: Spotify
+[application]
+id = "com.spotify.music"
+display_name = "Spotify (Android on Linux)"
+package_name = "com.spotify.music"
+min_sdk = 24
+target_sdk = 34
+required_abi = "x86_64"
+
+[runtime]
+art_heap_max_mb = 768
+art_compiler_filter = "speed-profile"
+enable_bionic_translator = false # Pure x86_64 native execution
+binder_service_shims = [
+  "audio",
+  "media_session",
+  "connectivity",
+  "package",
+  "activity",
+  "notification",
+]
+
+[graphics]
+preferred_backend = "egl_gles"
+gles_major_version = 3
+gles_minor_version = 0
+force_vsync = true
+dpi_scaling = 1.0
+
+[audio]
+preferred_backend = "pipewire"
+target_sample_rate = 44100
+preserve_sample_rate = true
+latency_buffer_ms = 40
+
+[desktop]
+enable_mpris = true
+mpris_bus_name = "org.mpris.MediaPlayer2.Lotify"
+register_media_keys = true
+show_tray_icon = true
+desktop_file = "lotify-spotify.desktop"
